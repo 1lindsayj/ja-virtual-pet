@@ -1,34 +1,50 @@
+//attributes & values
 public class PetNeeds {
     private String petName;
+    private String job;
+    private int age;
     private int hunger;
     private int thirst;
     private int lonliness;
     private int bladder;
     private int exhaustion;
     private int dirtiness;
+    private int happiness;
 
-    public PetNeeds(String newPetName) {
+    public PetNeeds(String newPetName, String job, int age){
         petName = newPetName;
+        this.job = job;
+        this.age = age;
         hunger = 1;
         thirst = 1;
         lonliness = 1;
         bladder = 1;
         exhaustion = 1;
         dirtiness = 1;
+        happiness = 1;
     }
-    
-    // Simulate the passage of time by degrading the pet's stats
+
+    // to change values
     public void tick() {
-        petName += 1;
         hunger += 1;
         thirst += 1;
         lonliness += 1;
         bladder += 1;
         exhaustion += 1;
         dirtiness += 1;
+        happiness += 1;
     }
 
-    // Increment Stats
+    public String toString() {
+        return " Name: " + petName + "\n" + " Job: " + job + "\n" + " Age: " + age + "\n" + 
+        " Hunger Level: " + hunger + "," + " Thirst Level: " + thirst + "," + 
+        " Lonliness Level: " + lonliness + "," + " Bladder Level: " + bladder + "\n" + 
+        " Exhaustion Level: " + exhaustion + "," + " Dirtiness Level: " + dirtiness + "," + 
+        " Happiness Level: " + happiness + "\n";
+
+        
+    }
+
     public void changeHunger(int newHunger) {
         hunger += newHunger;
     }
@@ -38,68 +54,88 @@ public class PetNeeds {
     }
 
     public void changeLonliness(int newLonliness) {
-        thirst += newLonliness;
+        lonliness += newLonliness;
     }
 
-    public void changeExhaustion(int newExhaustion) {
-        thirst += newExhaustion;
+    public void changeBladder(int newBladder) {
+        bladder += newBladder;
     }
 
-    public void changeDirtiness(int newDirtiness) {
+    public void changeExhaustion(int newExhaustion){
+        exhaustion += newExhaustion;
+    }
+
+    public void changeDirtiness(int newDirtiness){
         dirtiness += newDirtiness;
     }
 
-    // Setters
-    public void setName(String newName) {
+    public void changeHappiness(int newHappiness){
+        happiness += newHappiness;
+    }
+
+    // setters of values 
+    public void setName(String newName){
         this.petName = newName;
     }
 
-    public void setThirst(int newThirst) {
+    public void setThirst(int newThirst){
         this.thirst = newThirst;
     }
 
-    public void setLonliness(int newLonliness) {
+    public void setHunger(int newHunger){
+        this.hunger = newHunger;
+    }
+    
+    public void setLonliness(int newLonliness){
         this.lonliness = newLonliness;
     }
 
-    public void setBladder(int newBladder) {
+    public void setBladder(int newBladder){
         this.bladder = newBladder;
     }
 
-    public void setExhaustion(int newExhaustion) {
+    public void setExhaustion(int newExhaustion){
         this.exhaustion = newExhaustion;
     }
 
-    public void setDirtiness(int newDirtiness) {
+    public void setDirtiness(int newDirtiness){
         this.dirtiness = newDirtiness;
     }
 
-    // Getters
-    public String getName() {
+    public void setHappiness(int newHappiness){
+        this.happiness = newHappiness;
+    }
+
+    // getters of values
+    public String getName(){
         return petName;
     }
 
-    public int getHunger() {
-        return hunger;
-    }
-
-    public int getThirst() {
+    public int getThirst(){
         return thirst;
     }
 
-    public int getLonliness() {
+    public int getHunger(){
+        return hunger;
+    }
+
+    public int getLonliness(){
         return lonliness;
     }
 
-    public int getBladder() {
+    public int getBladder(){
         return bladder;
     }
 
-    public int getExhaustion() {
+    public int getExhaustion(){
         return exhaustion;
     }
 
-    public int getDirtiness() {
+    public int getDirtiness(){
         return dirtiness;
+    }
+
+    public int getHappiness(){
+        return happiness;
     }
 }
